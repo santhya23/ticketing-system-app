@@ -1,0 +1,294 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #d5eee8;
+    color: #222;
+    overflow-x: hidden;
+    transition: background 0.2s, color 0.2s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: #13395E;
+    text-align: center;
+}
+
+.ticket-dashboard {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 38px;
+    margin-top: 16px;
+}
+
+.dashboard-card {
+    background: #78a2ef8e;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(80,120,180,0.10);
+    width: 180px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.0em;
+    font-weight: 500;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.dashboard-card span {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 4px 16px rgba(80,120,180,0.18);
+    background: #3b6fcf;
+}
+
+.ticket-form {
+    background: #fff;
+    padding: 34px 32px 18px 32px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(70,100,150,0.11);
+    max-width: 510px;
+    margin: 0 auto 36px auto;
+    transition: background 0.2s;
+}
+
+label {
+    font-weight: 600;
+    color: #173C6D;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"],
+select, 
+textarea {
+    width: 100%;
+    padding: 9px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #bfc8e2;
+    border-radius: 5px;
+    background: #f7fbff;
+    font-size: 1em;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus, 
+textarea:focus {
+    border-color: #4076ba;
+    outline: none;
+}
+
+textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    margin-bottom: 18px;
+}
+
+/* Input Status */
+input.error {
+    border-color: #e74c3c;
+    background-color: #fff5f5;
+}
+
+input.success {
+    border-color: #2ecc71;
+    background-color: #f5fff7;
+}
+
+/* Button Styling */
+button[type="submit"], button, .btn {
+    background: #4076ba;
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    transition: background 0.17s;
+}
+
+button[type="submit"]:hover, button:hover, .btn:hover {
+    background: #274a89;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Table Styling */
+.table-container {
+    background: #fff;
+    padding: 18px 12px;
+    border-radius: 12px;
+    margin-top: 44px;
+    margin-bottom: 44px;
+    box-shadow: 0 0 10px rgba(70,115,200,0.07);
+    transition: background 0.2s;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+th, td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #d1def7;
+    text-align: left;
+}
+
+th {
+    background: #5481d6;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f4f7fc;
+}
+
+tr:hover {
+    background: #e6edfa;
+}
+
+img {
+    border-radius: 6px;
+    background: #e7eaf7;
+    border: 1px solid #bfc8e2;
+    padding: 2px;
+}
+
+/* Links */
+a, a:visited {
+    color: #10396a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+ul {
+    max-width: 510px;
+    margin: 14px auto;
+    padding: 8px 24px;
+    background: #fffddd;
+    color: #b3651a;
+    border: 1px solid #ffe6a1;
+    border-radius: 7px;
+    list-style-type: none;
+    font-weight: 500;
+}
+
+ul li {
+    margin-left: 0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .ticket-dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard-card {
+        width: 90%;
+        margin-bottom: 13px;
+    }
+
+    .ticket-form, .table-container {
+        padding: 15px 6px;
+        max-width: 99vw;
+    }
+
+    table, th, td {
+        font-size: 0.98em;
+    }
+}
+
+/* Dark Mode */
+body.dark {
+    background: #1e1e2f;
+    color: #f0f0f0;
+}
+
+body.dark .ticket-form,
+body.dark .table-container {
+    background: #2a2a3d;
+}
+
+body.dark th {
+    background: #3e5ba6;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background: #313a4e;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus {
+    border-color: #dadfe6;
+}
+
+/* Admin Login / Back to Home Button at Bottom-Left */
+.admin-login-btn {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    background: #274a89;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background 0.2s;
+}
+
+.admin-login-btn:hover {
+    background: #e6eaf1;
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: all 0.2s ease-in-out;
+}
