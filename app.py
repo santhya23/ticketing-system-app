@@ -215,6 +215,8 @@ def admin_feedback():
     all_feedback = feedback_table.all()
     return render_template('admin_feedback.html', feedback_list=all_feedback)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
